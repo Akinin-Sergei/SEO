@@ -34,8 +34,6 @@
 }
 
 @media (max-width: 1200px){
-    
-
     .form {
         padding: 20px 25px;
         gap: 25px;
@@ -58,11 +56,7 @@
     .header__menu-item+.header__menu-item {
         margin-left: 10px;
     }
-
 }
-
-
-
 
 @media (max-width: 1100px){
     #header__btn{
@@ -115,6 +109,8 @@
     }
 
     .form {
+        padding: 40px 40px;
+        border-radius: 20px;
         justify-content: center;
     }
 
@@ -123,9 +119,13 @@
     }
 
     .form-item {
-        grid-template-columns: minmax(200px, 500px);
-        grid-template-rows: 50px 50px 50px 73px 32px;
+        grid-template-columns: minmax(200px, 527px);
+        grid-template-rows: auto auto auto auto auto;
         justify-content: center;
+    }
+
+    .form__input {
+        border-radius: 10px;
     }
 
     .form__input.input__phone {
@@ -139,6 +139,7 @@
     }
 
     .form__btn {
+        padding-top: 24px;
         grid-column: 1 / 2;
         grid-row: 4 / 5;
     }
@@ -164,13 +165,14 @@
 @media (max-width: 1000px){
     .section__faq {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(50px, 88px) minmax(100px, auto) minmax(35px, 50px);
+        grid-template-rows: minmax(35px, auto) minmax(100px, auto) minmax(35px, auto);
     }
 
     .section__faq-link {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
         justify-items: start;
+        padding-top: 40px;
     }
 
     .section__faq-img {
@@ -178,12 +180,10 @@
     }
 }
 
-
-
 @media (max-width: 900px){
     .footer {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: minmax(10px, 55px) minmax(100px, 175px) minmax(100px, 170px) minmax(30px, 50px);
+        grid-template-columns: minmax(50px, 230px) minmax(50px, 117px) minmax(50px, 184px) minmax(50px, 147px);
+        grid-template-rows: minmax(50px, 70px) minmax(100px, 210px) minmax(100px, 175px) minmax(30px, 45px);
     }
 
     .footer__contacts {
@@ -222,12 +222,6 @@
     }
 }
 
-
-
-
-
-
-
 @media (max-width: 800px){
     .footer__platform {
         flex-direction: column;
@@ -252,25 +246,6 @@
         justify-content: space-between;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 768px){
     .header__phone {
@@ -308,7 +283,7 @@
     }
 
     .subtitle {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .section__block {
@@ -334,7 +309,7 @@
 
     .section__progect {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(100px, 143px) minmax(100px, 362px) minmax(100px, 10px);
+        grid-template-rows: minmax(25px, auto) minmax(100px, 362px) minmax(40px, auto);
     }
 
     .button__link-box{
@@ -348,7 +323,7 @@
     .section__progect-slider {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        /* overflow: revert-rule; */
+        padding: 40px;
     }
 
     .swiper-button-prev,
@@ -359,23 +334,48 @@
     .accordion {
         margin-top: 40px;
     }
+
+    .section__servisec__card {
+        border-radius: 20px;
+    }
+
+    .servisec__card-text__block-subtitle {
+        font-size: 16px;
+    }
+
+    .text__description-card,
+    .servisec__card-list li p {
+        font-size: 14px;
+    }
+
+    .text__description-card {
+        padding-top: 2px;
+    }
+
+    .text__description {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+
+    .slider__progect {
+        border-radius: 20px;
+    }
+
+    .accordion__item {
+        padding: 20px 20px;
+    }
+
+    .accordion__body {
+        margin-top: 16px;
+        font-size: 14px;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 500px){
+    html{
+        overflow-x: hidden;
+    }
+
     .burger__menu-body {
         width: 100vw;
     }
@@ -575,8 +575,6 @@
         grid-template-rows: minmax(65px, 65px) minmax(100px, 362px) minmax(100px, 10px);
     }
 
-
-
     .burger__menu-icon-inner:hover .burger__menu-icon, 
     .burger__menu-icon-inner:hover .burger__menu-icon::after, 
     .burger__menu-icon-inner:hover .burger__menu-icon::before,
@@ -592,7 +590,6 @@
         color: var(--black);
     }
 
-
     .button:hover,
     .back-to-top:hover, 
     .back-to-top:focus {
@@ -606,8 +603,4 @@
     .social__link:hover img {
         transform: scale(1);
     }
-
-
 }
-
-    
