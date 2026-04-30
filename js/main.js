@@ -1,4 +1,3 @@
-// ===HEADER_SCROLL===
 var header = $('.header'),
     scrollPrev = 0;
 
@@ -12,22 +11,18 @@ $(window).scroll(function () {
     scrollPrev = scrolled;
 });
 
+$('.dropdown__content-list').hide();
 
-
-
-
-$('.header__menu-link').on('click', function (e) {
-    e.preventDefault();
-
-
-    $('.header__menu-link').removeClass('open');
-    $('.header__menu-link-dropdown__content').removeClass('open');
-
-
-    $(this).toggleClass('open');
-    $($(this).attr('href')).toggleClass('open');
+$('.header__menu-item').click(function () {
+    if ($(this).hasClass("active")) {
+        $(this).removeClass("active").find(".dropdown__content-list").slideUp();
+    } else {
+        $(".header__menu-item.active .dropdown__content-list").slideUp();
+        $(".header__menu-item.active").removeClass("active");
+        $(this).addClass("active").find(".dropdown__content-list").slideDown();
+    }
+    return false;
 });
-
 
 $('#header__btn').click(function () {
     $('.form__poppup').fadeIn();
@@ -55,19 +50,12 @@ $('.form__poppup').click(function (e) {
     }
 });
 
-
-
-
 $('#burger__menu-icon').click(function () {
     $('.burger__menu-body').toggleClass('open');
     $('.burger__menu-bg').toggleClass('open');
     $('body').toggleClass('lock');
     return false;
 });
-
-
-
-
 
 $('.header__contacts-search_svg-box').on('click', function (e) {
     e.preventDefault();
@@ -103,7 +91,6 @@ const swiper_progect = new Swiper('.section__progect-slider', {
     },
 });
 
-
 $('.accordion__body').hide();
 
 $('.accordion__item').click(function () {
@@ -117,19 +104,15 @@ $('.accordion__item').click(function () {
     return false;
 });
 
-// Маска для телефона
 if ($('.input__phone').length !== 0) {
     $('.input__phone').mask('+7 (999) 999-99-99');
 };
 
-// ===FOOTER_LINK_SKROLL===
 $('#footer__logo').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 1000);
     return false;
 });
 
-
-// ===SCROLL TO TOP=== 
 $(function scrollToTop() {
 
     let button = $('.back-to-top');
@@ -151,12 +134,10 @@ $(function scrollToTop() {
 
 if ($(window).width() < 500) {
     const swiper_about = new Swiper('.section__block-slider', {
-
         slidesPerView: 1.1,
         witchOverflow: true,
         slidesPerGroup: 1,
         centeredSlides: true,
-        initialSlide: 1,
         loop: true,
         loopedSlides: 1,
 
@@ -180,3 +161,13 @@ if ($(window).width() < 500) {
     });
 };
 
+if ($(window).width() > 768) {
+    function parallax(event) {
+        this.querySelectorAll('.layer').forEach(layer => {
+            let speed = layer.getAttribute('data-speed');
+            layer.style.transform = `translate(${event.clientX * speed / 1000}px,${event.clientY * speed / 1000}px)`
+        });
+    }
+
+    document.addEventListener('mousemove', parallax);
+}
