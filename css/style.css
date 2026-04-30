@@ -83,7 +83,6 @@ body.lock{
     background-color: var(--hover);
 }
 
-/* Header */
 .header{
     position: fixed;
     top: 0;
@@ -145,7 +144,7 @@ body.lock{
     margin-left: 24px;
 }
 
-.header__menu-link.open::before{
+.header__menu-item.active .header__menu-link::before{
      transform: rotate(45deg) translate(-30%, -3%) scale(1);
 }
 
@@ -167,8 +166,13 @@ body.lock{
     border-left: 1px solid var(--hover);
 } 
 
-.header__menu-link-dropdown__content{
-    display: none;
+.dropdown__content-list-item:not(:last-child){
+    padding-bottom: 10px;
+}
+
+.dropdown__content-list{    
+    text-align: center;
+    line-height: 130%;
     position: absolute;
     top: 115%;
     right: 50%;
@@ -183,17 +187,8 @@ body.lock{
     transform: translateX(50%);
 }
 
-.dropdown__content-list-item:not(:last-child){
-    padding-bottom: 10px;
-}
-
-.dropdown__content-list{    
-     text-align: center;
-     line-height: 130%;
-}
-
-.header__menu-link-dropdown__content.open{
-    display: block;
+.header.out .dropdown__content-list {
+    display: none;
 }
 
 .header__contacts{
@@ -304,8 +299,7 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     opacity: .5;
 }
 
-/* Burger__menu */
-.burger__menu-icon-inner{/*Адаптив*/
+.burger__menu-icon-inner{
     display: none;
     width: 40px;
     height: 40px;
@@ -425,8 +419,6 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     opacity: 1;
     visibility: visible;
 }
-/*----------------------------------------------*/
-
 
 .section,
 .footer__block{
@@ -438,7 +430,6 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     margin-top: 84px;
 }
 
-/* BREADCRUMBS */
 .breadcrumbs{
     padding: 21px 0;
 }
@@ -491,7 +482,6 @@ input[type="search"]::-webkit-search-cancel-button:hover{
 .fancybox-caption__body{
     font-variant-numeric: lining-nums proportional-nums;
 }
-/* ================================================================= */
 
 .section__hero-screen_content{
     display: flex;
@@ -578,7 +568,6 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     padding: 20px 24px;
     width: 424px;
     height: auto;
-    /* height: 418px; */
     background-color: var(--white);
     box-shadow: 0px 4px 25px 0px rgba(1, 8, 3, 0.2);
     border-radius: 30px;
@@ -1001,7 +990,7 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     display: grid;
     grid-template-columns: minmax(100px, 320px) minmax(100px, 320px);
     grid-template-rows: minmax(20px, 50px) minmax(20px, 50px) minmax(50px, 73px) minmax(50px, 55px);
-    gap: 17px;
+    gap: 16px;
 }
 
 .form__input.name{
@@ -1119,7 +1108,6 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     color: var(--hover);
 }
 
-/* Poppup */
 .form__poppup{
     display: none;
     position: fixed;
@@ -1218,9 +1206,7 @@ input[type="search"]::-webkit-search-cancel-button:hover{
 .policy__text-form__poppup{
     max-width: 450px;
 }
-/*=====================================*/
 
-/* Footer */
 .footer__platform{
     display: flex;
     justify-content: space-between;
@@ -1351,14 +1337,17 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     grid-template-columns: minmax(185px, 280px) 1fr;
     gap: 20px;
     align-items: end;
-}
-
-.footer__copyright-text,
-.footer__menu-link{
     font-size: 14px;
     font-weight: 600;
     line-height: 130%;
     color: var(--grey);
+}
+
+.footer__menu-link{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--black);
 }
 
 .copyright ul li+li{
@@ -1369,9 +1358,7 @@ input[type="search"]::-webkit-search-cancel-button:hover{
     display: flex;
     gap: 92px;
 }
-/*=============================*/
 
-/* Screen Decor */
 .screen_content-back_1,
 .screen_content-back_2{
     display: block;
@@ -1443,9 +1430,7 @@ input[type="search"]::-webkit-search-cancel-button:hover{
         filter: blur(110.5px);
     }
 }
-/*=============================*/
 
-/* SCROLL TO TOP */
 .back-to-top {
     display: none;
     position: fixed;
@@ -1518,9 +1503,7 @@ input[type="search"]::-webkit-search-cancel-button:hover{
         opacity: 1;
     }
 }
-/* ================================================================= */
 
-/* SCROLLBAR */
 body::-webkit-scrollbar {
     width: 5px;
 }
@@ -1558,15 +1541,7 @@ body::-webkit-scrollbar-thumb:hover {
 .modal::-webkit-scrollbar-thumb:hover {
     background-color: var(--hover);
 }
-/* ================================================================= */
-
-
-
 
 .accordion__item.active .accordion__body{
     display: block !important;
-}
-
-.header.out .header__menu-link-dropdown__content.open {
-    display: none;
 }
